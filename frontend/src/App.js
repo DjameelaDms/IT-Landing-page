@@ -351,9 +351,9 @@ const SolutionsSection = () => {
                     backgroundImage: `url(${solution.bgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    filter: 'blur(3px)',
-                    opacity: 0.15,
-                    transform: 'scale(1.1)'
+                    filter: 'blur(1px)',
+                    opacity: 0.2,
+                    transform: 'scale(1.05)'
                   }}
                 />
               )}
