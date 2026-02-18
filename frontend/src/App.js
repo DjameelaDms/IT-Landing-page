@@ -13,16 +13,13 @@ import {
   Wifi, 
   FileText,
   Mail,
-  Phone,
-  MapPin,
   Menu,
   X,
   ChevronRight,
   CheckCircle,
   ArrowRight,
   Clock,
-  Building,
-  Quote
+  Building
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
