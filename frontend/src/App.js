@@ -41,9 +41,10 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_medical-solution
 
 // Solution Background Images (User Provided)
 const SOLUTION_IMAGES = {
-  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0zx2dxr1_EM%20-CC.jpeg",
-  iot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/nspev58g_IOT.jpeg",
-  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/dbunh02f_Protocol%20designer.jpeg",
+  disasterms: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/uhcudkwx_DisasterMS.jpeg",
+  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/fo7g0r4a_EM%20-CC.jpeg",
+  iot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/kuz3we6e_IOT.jpeg",
+  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/98h2v114_Protocol%20designer.jpeg",
   codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/gu3579um_Tele%20Code%20Blue%20Kit.jpeg",
   triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/3vpmqdvv_Triage.jpeg"
 };
