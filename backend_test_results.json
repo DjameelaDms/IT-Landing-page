@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "tests_passed": 7,
+    "tests_total": 7,
+    "success_rate": "100.0%",
+    "timestamp": "2026-02-18T13:47:36.712943"
+  },
+  "failed_tests": [],
+  "detailed_results": [
+    {
+      "test_name": "API Root Endpoint",
+      "method": "GET",
+      "endpoint": "",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_text": "{\"message\":\"ARETION Informatics Solutions API\"}",
+      "data_sent": null
+    },
+    {
+      "test_name": "Create Status Check",
+      "method": "POST",
+      "endpoint": "status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_text": "{\"id\":\"ad16137c-3b2c-4272-949c-80a518f39cd8\",\"client_name\":\"test_client_134735\",\"timestamp\":\"2026-02-18T13:47:36.003328Z\"}",
+      "data_sent": {
+        "client_name": "test_client_134735"
+      }
+    },
+    {
+      "test_name": "Get Status Checks",
+      "method": "GET",
+      "endpoint": "status",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_text": "[{\"id\":\"ad16137c-3b2c-4272-949c-80a518f39cd8\",\"client_name\":\"test_client_134735\",\"timestamp\":\"2026-02-18T13:47:36.003328Z\"}]",
+      "data_sent": null
+    },
+    {
+      "test_name": "Submit Contact Form",
+      "method": "POST",
+      "endpoint": "contact",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_text": "{\"id\":\"5c019f66-5b3b-4a84-bde6-b17f9a3441f3\",\"name\":\"Test User\",\"email\":\"test@example.com\",\"organization\":\"Test Hospital\",\"interest\":\"disasterms\",\"message\":\"This is a test contact form submission.\",\"created_at\":\"2026-02-18T13:47:36.261557+00:00\",\"success\":true,\"message_response\":\"Thank you for contacting ARETION Informatics Solutions. We will get back to you within 24-48 hours.\"}",
+      "data_sent": {
+        "name": "Test User",
+        "email": "test@example.com",
+        "organization": "Test Hospital",
+        "interest": "disasterms",
+        "message": "This is a test contact form submission."
+      }
+    },
+    {
+      "test_name": "Get Contact Submissions",
+      "method": "GET",
+      "endpoint": "contact",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_text": "[{\"id\":\"5c019f66-5b3b-4a84-bde6-b17f9a3441f3\",\"name\":\"Test User\",\"email\":\"test@example.com\",\"organization\":\"Test Hospital\",\"interest\":\"disasterms\",\"message\":\"This is a test contact form submission.\",\"created_at\":\"2026-02-18T13:47:36.261557+00:00\",\"success\":true,\"message_response\":\"Retrieved successfully\"}]",
+      "data_sent": null
+    },
+    {
+      "test_name": "Contact Form Validation (Missing Fields)",
+      "method": "POST",
+      "endpoint": "contact",
+      "expected_status": 422,
+      "actual_status": 422,
+      "success": true,
+      "response_text": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"email\"],\"msg\":\"Field required\",\"input\":{\"name\":\"Test User\"},\"url\":\"https://errors.pydantic.dev/2.12/v/missing\"},{\"type\":\"missing\",\"loc\":[\"body\",\"message\"],\"msg\":\"Field required\",\"input\":{\"name\":\"Test User\"},\"url\":\"https://errors.pydantic.dev/2.12/v/missing\"}]}",
+      "data_sent": {
+        "name": "Test User"
+      }
+    },
+    {
+      "test_name": "Contact Form Invalid Email",
+      "method": "POST",
+      "endpoint": "contact",
+      "expected_status": 422,
+      "actual_status": 422,
+      "success": true,
+      "response_text": "{\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\",\"email\"],\"msg\":\"value is not a valid email address: An email address must have an @-sign.\",\"input\":\"invalid-email\",\"ctx\":{\"reason\":\"An email address must have an @-sign.\"}}]}",
+      "data_sent": {
+        "name": "Test User",
+        "email": "invalid-email",
+        "message": "Test message"
+      }
+    }
+  ]
+}
