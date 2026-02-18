@@ -976,10 +976,7 @@ Breaches may result in:
             {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
               <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
-              <div>
-                <span className="font-heading text-lg font-bold text-white">ARETION</span>
-                <span className="block text-xs text-white/60">& Company</span>
-              </div>
+              <span className="font-heading text-lg font-bold text-white">ARETION & Company</span>
             </div>
 
             {/* Footer Links */}
