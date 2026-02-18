@@ -463,28 +463,6 @@ const BenefitsSection = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Stats Row */}
-          <motion.div 
-            className="flex flex-wrap justify-center gap-8 mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="bg-[#1E3A5F] rounded-lg p-6 text-center min-w-[140px]">
-              <span className="font-heading text-3xl font-bold text-white mb-1 block">15+</span>
-              <span className="text-[#C4A77D] text-sm">Years of Excellence</span>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center min-w-[140px] border border-[#6B8CAE]/20">
-              <span className="font-heading text-3xl font-bold text-[#1E3A5F] mb-1 block">50+</span>
-              <span className="text-[#6B8CAE] text-sm">Hospitals Served</span>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center min-w-[140px] border border-[#6B8CAE]/20">
-              <span className="font-heading text-3xl font-bold text-[#1E3A5F] mb-1 block">99.9%</span>
-              <span className="text-[#6B8CAE] text-sm">Uptime</span>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
