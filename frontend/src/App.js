@@ -335,29 +335,48 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => (
             <motion.div
               key={solution.id}
-              className={`solution-card ${solution.size}`}
+              className={`solution-card ${solution.size} ${solution.bgImage ? 'has-bg-image' : ''}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               data-testid={`solution-card-${solution.id}`}
+              style={solution.bgImage ? {
+                position: 'relative',
+                overflow: 'hidden'
+              } : {}}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded bg-[#1E3A5F]/10 flex items-center justify-center">
-                  <solution.icon className="h-6 w-6 text-[#1E3A5F]" />
+              {solution.bgImage && (
+                <div 
+                  className="absolute inset-0 z-0"
+                  style={{
+                    backgroundImage: `url(${solution.bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'blur(3px)',
+                    opacity: 0.15,
+                    transform: 'scale(1.1)'
+                  }}
+                />
+              )}
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded bg-[#1E3A5F]/10 flex items-center justify-center">
+                    <solution.icon className="h-6 w-6 text-[#1E3A5F]" />
+                  </div>
+                  {solution.comingSoon ? (
+                    <span className="badge-coming-soon">Coming Soon</span>
+                  ) : (
+                    <span className="badge-available">Available</span>
+                  )}
                 </div>
-                {solution.comingSoon ? (
-                  <span className="badge-coming-soon">Coming Soon</span>
-                ) : (
-                  <span className="badge-available">Available</span>
-                )}
+                <h3 className="font-subheading text-xl font-semibold text-[#1E3A5F] mb-2">
+                  {solution.title}
+                </h3>
+                <p className="font-body text-[#3D1C1C]/70 text-sm leading-relaxed">
+                  {solution.description}
+                </p>
               </div>
-              <h3 className="font-subheading text-xl font-semibold text-[#1E3A5F] mb-2">
-                {solution.title}
-              </h3>
-              <p className="font-body text-[#3D1C1C]/70 text-sm leading-relaxed">
-                {solution.description}
-              </p>
             </motion.div>
           ))}
         </div>
