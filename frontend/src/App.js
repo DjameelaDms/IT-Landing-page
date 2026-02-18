@@ -273,7 +273,7 @@ const HeroSection = () => {
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                At ARETION Informatic Solutions, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
+                At ARETION Informatics Solutions, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
               </p>
               <p className="font-semibold text-[#1E3A5F]">
                 We don't just offer solutions. We partner with you to reimagine what's possible.
