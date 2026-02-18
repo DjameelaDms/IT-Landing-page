@@ -248,12 +248,12 @@ const HeroSection = () => {
     <section className="hero-section" data-testid="hero-section">
       <div className="hero-pattern"></div>
       <div className="container-main relative z-10">
-        <div className="flex flex-col lg:flex-row items-center min-h-[calc(100vh-80px)] gap-12 py-12">
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center py-12">
           {/* Text Content */}
           <motion.div 
-            className="flex-1 lg:pr-8"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="max-w-4xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
@@ -262,11 +262,11 @@ const HeroSection = () => {
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-6" data-testid="hero-headline">
               Integrated Digital Ecosystem for Smarter Hospital Operations
             </h1>
-            <p className="font-body text-lg text-[#3D1C1C]/80 leading-relaxed mb-8 max-w-xl">
+            <p className="font-body text-lg text-[#3D1C1C]/80 leading-relaxed mb-8 max-w-2xl mx-auto">
               Streamlining healthcare workflows with precision-engineered informatics solutions. 
               Partner with medical cities across Saudi Arabia for innovative healthcare transformation.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <button 
                 onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-primary"
@@ -285,47 +285,18 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-12">
-              <div>
-                <span className="block font-heading text-3xl font-bold text-[#1E3A5F]">98%</span>
+            <div className="flex flex-wrap justify-center gap-12 mt-16">
+              <div className="text-center">
+                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">98%</span>
                 <span className="text-sm text-[#6B8CAE]">Efficiency Rate</span>
               </div>
-              <div>
-                <span className="block font-heading text-3xl font-bold text-[#1E3A5F]">24/7</span>
+              <div className="text-center">
+                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">24/7</span>
                 <span className="text-sm text-[#6B8CAE]">Support Coverage</span>
               </div>
-              <div>
-                <span className="block font-heading text-3xl font-bold text-[#1E3A5F]">9+</span>
+              <div className="text-center">
+                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">9+</span>
                 <span className="text-sm text-[#6B8CAE]">Integrated Solutions</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div 
-            className="flex-1 relative"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="relative">
-              <img 
-                src={HERO_IMAGE} 
-                alt="Healthcare Professional with Digital Technology" 
-                className="w-full h-auto rounded-lg shadow-[0_20px_60px_rgba(30,58,95,0.2)]"
-                data-testid="hero-image"
-              />
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 glass-card p-4 hidden sm:block" data-testid="hero-stats-card">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1E3A5F] flex items-center justify-center">
-                    <CheckCircle className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <span className="block font-subheading font-semibold text-[#1E3A5F]">Trusted Partner</span>
-                    <span className="text-sm text-[#6B8CAE]">Medical Cities KSA</span>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>
