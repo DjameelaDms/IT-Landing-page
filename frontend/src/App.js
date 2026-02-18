@@ -265,22 +265,22 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Welcome to ARETION
+              Integrated Digital Ecosystem for Smarter Hospital Operations
             </h1>
-            <p className="font-subheading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
+            <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
               Smarter Hospitals. Better Outcomes. Ahead of the Curve.
             </p>
             
-            <div className="font-body text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
+            <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                At ARETION, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
+                At ARETION Informatic Solutions, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
               </p>
               <p className="font-semibold text-[#1E3A5F]">
                 We don't just offer solutions. We partner with you to reimagine what's possible.
               </p>
               
               <div className="mt-8">
-                <h3 className="font-subheading text-xl font-bold text-[#1E3A5F] mb-4">What Sets Us Apart</h3>
+                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">What Sets Us Apart</h3>
                 <p className="mb-4">
                   Our expertise spans the full stack—from intelligent systems architecture to advanced statistical disease modeling, process automation, and predictive analytics. Our team of full-stack engineers, data scientists, and domain specialists work in concert to solve the problems that matter most:
                 </p>
@@ -301,7 +301,7 @@ const HeroSection = () => {
               </div>
               
               <div className="mt-8">
-                <h3 className="font-subheading text-xl font-bold text-[#1E3A5F] mb-4">Who We Serve</h3>
+                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Who We Serve</h3>
                 <p>
                   Whether you're a regional hospital seeking operational excellence, a large healthcare network pursuing system-wide transformation, or a research institution advancing medical science, ARETION is built for you.
                 </p>
