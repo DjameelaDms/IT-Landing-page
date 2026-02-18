@@ -653,9 +653,10 @@ const ContactSection = () => {
                 <option value="sales">Sales Inquiry</option>
                 <option value="demo">Schedule a Demo</option>
                 <option value="implementation">Implementation & Integration</option>
-                <option value="partnership">Partnership & Integration</option>
+                <option value="partnership">Partnership</option>
                 <option value="research">Research Collaboration</option>
                 <option value="careers">Careers/Recruitment</option>
+                <option value="other">Other</option>
               </select>
               <textarea
                 placeholder="Your Message"
