@@ -41,9 +41,15 @@ const API = `${BACKEND_URL}/api`;
 
 // Assets
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0hzqlwr8_A_Logo-39.png";
-const HERO_IMAGE = "https://images.unsplash.com/photo-1758691462668-046fd85ceac9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBkaWdpdGFsJTIwdGFibGV0JTIwbWVkaWNhbHxlbnwwfHx8fDE3NzE0MjE5OTV8MA&ixlib=rb-4.1.0&q=85";
-const TEAM_IMAGE = "https://images.pexels.com/photos/5452193/pexels-photo-5452193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-const DATA_IMAGE = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwZGF0YSUyMHZpc3VhbGl6YXRpb24lMjBzY3JlZW58ZW58MHx8fHwxNzcxNDIxOTk2fDA&ixlib=rb-4.1.0&q=85";
+
+// Solution Background Images (User Provided)
+const SOLUTION_IMAGES = {
+  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0zx2dxr1_EM%20-CC.jpeg",
+  iot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/nspev58g_IOT.jpeg",
+  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/dbunh02f_Protocol%20designer.jpeg",
+  codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/gu3579um_Tele%20Code%20Blue%20Kit.jpeg",
+  triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/3vpmqdvv_Triage.jpeg"
+};
 
 // Solutions Data
 const solutions = [
