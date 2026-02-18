@@ -142,7 +142,7 @@
     padding: 0.875rem 2rem;
     background-color: var(--navy);
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     font-size: 0.875rem;
     border-radius: 50px;
@@ -163,7 +163,7 @@
     padding: 0.875rem 2rem;
     background-color: transparent;
     color: var(--navy);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     font-size: 0.875rem;
     border-radius: 50px;
