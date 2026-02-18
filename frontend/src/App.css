@@ -15,15 +15,15 @@
 
 /* Typography */
 .font-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-subheading {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Header */
