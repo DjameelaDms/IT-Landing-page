@@ -59,7 +59,8 @@ const solutions = [
     description: "Advanced ecosystem for facility safety with early warning, disaster prediction, and full closed-loop response system.",
     icon: ShieldCheck,
     comingSoon: false,
-    size: "md:col-span-2"
+    size: "md:col-span-2",
+    bgImage: null
   },
   {
     id: 2,
@@ -67,7 +68,8 @@ const solutions = [
     description: "Secure AI chatbot trained on hospital data, providing accurate, source-based answers with minimal hallucination.",
     icon: Brain,
     comingSoon: false,
-    size: ""
+    size: "",
+    bgImage: null
   },
   {
     id: 3,
@@ -75,7 +77,8 @@ const solutions = [
     description: "Statistical models for predicting climate-related changes and natural disasters, improving preparedness.",
     icon: TrendingUp,
     comingSoon: false,
-    size: "md:row-span-2"
+    size: "md:row-span-2",
+    bgImage: null
   },
   {
     id: 4,
@@ -83,7 +86,8 @@ const solutions = [
     description: "Digital system for recognizing and identifying mass-casualty victims, fully integrated with hospital HIS.",
     icon: Users,
     comingSoon: false,
-    size: ""
+    size: "",
+    bgImage: SOLUTION_IMAGES.triage
   },
   {
     id: 5,
@@ -91,7 +95,8 @@ const solutions = [
     description: "Emergency Medicine Cluster Coverage connecting hospitals in the same region for safe patient journey management.",
     icon: Radio,
     comingSoon: false,
-    size: ""
+    size: "",
+    bgImage: SOLUTION_IMAGES.emcc
   },
   {
     id: 6,
@@ -99,7 +104,8 @@ const solutions = [
     description: "Remote expert support for critical airway management in emergency situations.",
     icon: Stethoscope,
     comingSoon: true,
-    size: "md:col-span-2"
+    size: "md:col-span-2",
+    bgImage: null
   },
   {
     id: 7,
@@ -107,7 +113,8 @@ const solutions = [
     description: "Virtual tools to activate and coordinate code blue events remotely.",
     icon: HeartPulse,
     comingSoon: true,
-    size: ""
+    size: "",
+    bgImage: SOLUTION_IMAGES.codeblue
   },
   {
     id: 8,
@@ -115,7 +122,8 @@ const solutions = [
     description: "Real-time connection of medical devices for improved situational awareness.",
     icon: Wifi,
     comingSoon: true,
-    size: ""
+    size: "",
+    bgImage: SOLUTION_IMAGES.iot
   },
   {
     id: 9,
@@ -123,7 +131,8 @@ const solutions = [
     description: "AI SaaS platform to design and manage custom disaster and emergency protocols.",
     icon: FileText,
     comingSoon: true,
-    size: ""
+    size: "",
+    bgImage: SOLUTION_IMAGES.protocol
   }
 ];
 
