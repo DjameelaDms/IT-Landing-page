@@ -390,40 +390,12 @@ const BenefitsSection = () => {
   return (
     <section id="benefits" className="benefits-section py-20 lg:py-28" data-testid="benefits-section">
       <div className="container-main">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          {/* Images Grid */}
-          <motion.div 
-            className="flex-1 relative"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="grid grid-cols-2 gap-4">
-              <img 
-                src={TEAM_IMAGE} 
-                alt="Healthcare Team Meeting" 
-                className="rounded-lg shadow-lg col-span-2"
-                data-testid="benefits-image-1"
-              />
-              <img 
-                src={DATA_IMAGE} 
-                alt="Data Visualization" 
-                className="rounded-lg shadow-lg"
-                data-testid="benefits-image-2"
-              />
-              <div className="bg-[#1E3A5F] rounded-lg p-6 flex flex-col justify-center">
-                <span className="font-heading text-4xl font-bold text-white mb-2">15+</span>
-                <span className="text-[#C4A77D] text-sm">Years of Excellence</span>
-              </div>
-            </div>
-          </motion.div>
-
+        <div className="max-w-4xl mx-auto">
           {/* Content */}
           <motion.div 
-            className="flex-1"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -433,29 +405,51 @@ const BenefitsSection = () => {
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-6" data-testid="benefits-title">
               Precision, Integration, Security
             </h2>
-            <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
+            <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
               Our modular platform empowers healthcare organizations with tools they can grow over time, 
               ensuring stronger safety and smarter clinical decisions.
             </p>
+          </motion.div>
 
-            {/* Benefits List */}
-            <div className="space-y-4" data-testid="benefits-list">
-              {benefits.map((benefit, index) => (
-                <motion.div 
-                  key={index}
-                  className="flex items-start gap-4 p-4 bg-white/60 rounded border border-[#6B8CAE]/20"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-subheading font-semibold text-[#1E3A5F]">{benefit.title}</h4>
-                    <p className="text-sm text-[#3D1C1C]/70">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+          {/* Benefits Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="benefits-list">
+            {benefits.map((benefit, index) => (
+              <motion.div 
+                key={index}
+                className="flex items-start gap-4 p-6 bg-white/80 rounded border border-[#6B8CAE]/20"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-subheading font-semibold text-[#1E3A5F]">{benefit.title}</h4>
+                  <p className="text-sm text-[#3D1C1C]/70">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Stats Row */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-8 mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="bg-[#1E3A5F] rounded-lg p-6 text-center min-w-[140px]">
+              <span className="font-heading text-3xl font-bold text-white mb-1 block">15+</span>
+              <span className="text-[#C4A77D] text-sm">Years of Excellence</span>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center min-w-[140px] border border-[#6B8CAE]/20">
+              <span className="font-heading text-3xl font-bold text-[#1E3A5F] mb-1 block">50+</span>
+              <span className="text-[#6B8CAE] text-sm">Hospitals Served</span>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center min-w-[140px] border border-[#6B8CAE]/20">
+              <span className="font-heading text-3xl font-bold text-[#1E3A5F] mb-1 block">99.9%</span>
+              <span className="text-[#6B8CAE] text-sm">Uptime</span>
             </div>
           </motion.div>
         </div>
