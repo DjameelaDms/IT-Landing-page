@@ -1,34 +1,308 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* ARETION Landing Page Styles */
+
+/* Container */
+.container-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+    .container-main {
+        padding: 0 3rem;
     }
 }
 
-.App-header {
-    background-color: #0f0f10;
+/* Typography */
+.font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-subheading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Header */
+.header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: rgba(245, 240, 232, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107, 140, 174, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section */
+.hero-section {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding-top: 80px;
+    background-color: #F5F0E8;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Solutions Grid */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .solutions-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Solution Card */
+.solution-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(107, 140, 174, 0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(30, 58, 95, 0.12);
+    border-color: var(--navy);
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--navy) 0%, var(--rust) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.solution-card:hover::before {
+    opacity: 1;
+}
+
+/* Badge */
+.badge-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--rust);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+}
+
+.badge-available {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--navy);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
+    padding: 0.875rem 2rem;
+    background-color: var(--navy);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--rust);
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    background-color: transparent;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 50px;
+    border: 2px solid var(--navy);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--navy);
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--navy);
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+/* Form Input */
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--tan);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--maroon-dark);
+    color: white;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--tan);
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Stats Card */
+.stats-card {
+    background: white;
+    border: 1px solid rgba(107, 140, 174, 0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: white;
+    border: 1px solid rgba(107, 140, 174, 0.2);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--tan);
+    line-height: 1;
+    opacity: 0.3;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background: linear-gradient(180deg, #F5F0E8 0%, rgba(196, 167, 125, 0.1) 100%);
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
     from {
-        transform: rotate(0deg);
+        opacity: 0;
     }
     to {
-        transform: rotate(360deg);
+        opacity: 1;
     }
 }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger Animation Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
