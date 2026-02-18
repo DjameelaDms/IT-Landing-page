@@ -70,7 +70,7 @@ const solutions = [
     icon: Brain,
     comingSoon: false,
     size: "",
-    bgImage: null
+    bgImage: SOLUTION_IMAGES.chatbot
   },
   {
     id: 3,
@@ -79,7 +79,7 @@ const solutions = [
     icon: TrendingUp,
     comingSoon: false,
     size: "",
-    bgImage: null
+    bgImage: SOLUTION_IMAGES.predictive
   },
   {
     id: 4,
@@ -106,7 +106,7 @@ const solutions = [
     icon: Stethoscope,
     comingSoon: false,
     size: "",
-    bgImage: null
+    bgImage: SOLUTION_IMAGES.teleintubation
   },
   {
     id: 7,
