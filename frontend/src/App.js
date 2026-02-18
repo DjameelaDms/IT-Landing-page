@@ -493,13 +493,14 @@ const DemoSection = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <a href="mailto:informatics@aretion.co.uk?subject=Demo Request" className="btn-primary" data-testid="demo-request-btn">
+              <button 
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                className="btn-primary" 
+                data-testid="demo-request-btn"
+              >
                 Request a Live Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-              <a href="mailto:informatics@aretion.co.uk?subject=Consultation Booking" className="btn-secondary" data-testid="demo-consultation-btn">
-                Book Consultation
-              </a>
+              </button>
             </div>
 
             {/* Feature Cards */}
