@@ -256,7 +256,7 @@ const HeroSection = () => {
     <section className="hero-section" data-testid="hero-section">
       <div className="hero-pattern"></div>
       <div className="container-main relative z-10">
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center py-12">
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] py-16">
           {/* Text Content */}
           <motion.div 
             className="max-w-4xl"
@@ -264,17 +264,58 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-              Healthcare Innovation
-            </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-6" data-testid="hero-headline">
-              Integrated Digital Ecosystem for Smarter Hospital Operations
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
+              Welcome to ARETION
             </h1>
-            <p className="font-body text-lg text-[#3D1C1C]/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Streamlining healthcare workflows with precision-engineered informatics solutions. 
-              Partner with medical cities across Saudi Arabia for innovative healthcare transformation.
+            <p className="font-subheading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
+              Smarter Hospitals. Better Outcomes. Ahead of the Curve.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            
+            <div className="font-body text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
+              <p>
+                At ARETION, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
+              </p>
+              <p className="font-semibold text-[#1E3A5F]">
+                We don't just offer solutions. We partner with you to reimagine what's possible.
+              </p>
+              
+              <div className="mt-8">
+                <h3 className="font-subheading text-xl font-bold text-[#1E3A5F] mb-4">What Sets Us Apart</h3>
+                <p className="mb-4">
+                  Our expertise spans the full stack—from intelligent systems architecture to advanced statistical disease modeling, process automation, and predictive analytics. Our team of full-stack engineers, data scientists, and domain specialists work in concert to solve the problems that matter most:
+                </p>
+                <ul className="space-y-2 ml-4">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
+                    <span><strong>Smarter Operations:</strong> Streamlined workflows, optimized resource allocation, and reduced inefficiencies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
+                    <span><strong>Safer Patient Care:</strong> Real-time insights, risk prediction, and evidence-driven clinical decision support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
+                    <span><strong>Future-Ready Infrastructure:</strong> Scalable, adaptable solutions that evolve with your institution</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="mt-8">
+                <h3 className="font-subheading text-xl font-bold text-[#1E3A5F] mb-4">Who We Serve</h3>
+                <p>
+                  Whether you're a regional hospital seeking operational excellence, a large healthcare network pursuing system-wide transformation, or a research institution advancing medical science, ARETION is built for you.
+                </p>
+              </div>
+              
+              <p className="text-[#1E3A5F] font-medium mt-6">
+                The healthcare landscape is changing rapidly. The question isn't whether you'll adapt—it's whether you'll lead.
+              </p>
+              <p className="font-semibold text-[#8B4513] text-lg">
+                Let's make your hospital smarter, together.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
               <button 
                 onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-primary"
@@ -290,22 +331,6 @@ const HeroSection = () => {
               >
                 Request Consultation
               </button>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-12 mt-16">
-              <div className="text-center">
-                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">98%</span>
-                <span className="text-sm text-[#6B8CAE]">Efficiency Rate</span>
-              </div>
-              <div className="text-center">
-                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">24/7</span>
-                <span className="text-sm text-[#6B8CAE]">Support Coverage</span>
-              </div>
-              <div className="text-center">
-                <span className="block font-heading text-4xl font-bold text-[#1E3A5F]">9+</span>
-                <span className="text-sm text-[#6B8CAE]">Integrated Solutions</span>
-              </div>
             </div>
           </motion.div>
         </div>
