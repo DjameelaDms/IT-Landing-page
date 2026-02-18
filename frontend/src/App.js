@@ -75,7 +75,7 @@ const solutions = [
     description: "Statistical models for predicting climate-related changes and natural disasters, improving preparedness.",
     icon: TrendingUp,
     comingSoon: false,
-    size: "md:row-span-2",
+    size: "",
     bgImage: null
   },
   {
@@ -102,7 +102,7 @@ const solutions = [
     description: "Remote expert support for critical airway management in emergency situations.",
     icon: Stethoscope,
     comingSoon: false,
-    size: "md:col-span-2",
+    size: "",
     bgImage: null
   },
   {
