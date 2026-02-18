@@ -649,14 +649,13 @@ const ContactSection = () => {
                 className="form-input"
                 data-testid="contact-interest-select"
               >
-                <option value="">Select Area of Interest</option>
-                <option value="disasterms">DisasterMs - Crisis Management</option>
-                <option value="chatbot">Specialized Chatbot</option>
-                <option value="predictive">Predictive Models</option>
-                <option value="triage">Triage System</option>
-                <option value="emcc">EM:CC - Emergency Coordination</option>
-                <option value="general">General Inquiry</option>
-                <option value="partnership">Partnership Opportunity</option>
+                <option value="">Select Category</option>
+                <option value="sales">Sales Inquiry</option>
+                <option value="demo">Schedule a Demo</option>
+                <option value="implementation">Implementation & Integration</option>
+                <option value="partnership">Partnership & Integration</option>
+                <option value="research">Research Collaboration</option>
+                <option value="careers">Careers/Recruitment</option>
               </select>
               <textarea
                 placeholder="Your Message"
