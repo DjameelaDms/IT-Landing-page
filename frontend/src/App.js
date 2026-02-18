@@ -522,7 +522,7 @@ const TestimonialsSection = () => {
     <section className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="testimonials-section">
       <div className="container-main">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -534,50 +534,20 @@ const TestimonialsSection = () => {
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4" data-testid="testimonials-title">
             Our Partners & Clients
           </h2>
-          <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
+          <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
             Working alongside leading healthcare institutions in Saudi Arabia and beyond.
           </p>
-        </motion.div>
-
-        {/* Partner Logos Placeholder */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mb-16" data-testid="partners-logos">
-          {["Medical City A", "Hospital Group B", "Healthcare Network C", "Medical Center D"].map((partner, index) => (
-            <motion.div 
-              key={index}
-              className="w-40 h-20 bg-white rounded border border-[#6B8CAE]/20 flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+          
+          {/* CTA to Contact */}
+          <div className="mt-8">
+            <button 
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              className="btn-secondary"
+              data-testid="testimonials-contact-btn"
             >
-              <span className="font-subheading text-sm text-[#6B8CAE] text-center px-2">{partner}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Testimonial */}
-        <motion.div 
-          className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="testimonial-card" data-testid="testimonial-card">
-            <Quote className="h-10 w-10 text-[#C4A77D] mb-4" />
-            <p className="font-body text-lg text-[#3D1C1C] italic mb-6 leading-relaxed">
-              "ARETION's integrated solutions have transformed our emergency response capabilities. 
-              The DisasterMs platform alone has improved our crisis management efficiency by over 40%."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#1E3A5F] flex items-center justify-center">
-                <span className="font-subheading font-bold text-white">HC</span>
-              </div>
-              <div>
-                <span className="block font-subheading font-semibold text-[#1E3A5F]">Healthcare Leader</span>
-                <span className="text-sm text-[#6B8CAE]">Medical City, Saudi Arabia</span>
-              </div>
-            </div>
+              Become a Partner
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </button>
           </div>
         </motion.div>
       </div>
