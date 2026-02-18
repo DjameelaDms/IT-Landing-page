@@ -58,7 +58,7 @@ const solutions = [
     icon: ShieldCheck,
     comingSoon: false,
     size: "md:col-span-2",
-    bgImage: null
+    bgImage: SOLUTION_IMAGES.disasterms
   },
   {
     id: 2,
@@ -101,7 +101,7 @@ const solutions = [
     title: "Tele-Intubation",
     description: "Remote expert support for critical airway management in emergency situations.",
     icon: Stethoscope,
-    comingSoon: true,
+    comingSoon: false,
     size: "md:col-span-2",
     bgImage: null
   },
@@ -110,7 +110,7 @@ const solutions = [
     title: "Tele Code Blue Kit",
     description: "Virtual tools to activate and coordinate code blue events remotely.",
     icon: HeartPulse,
-    comingSoon: true,
+    comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.codeblue
   },
@@ -119,7 +119,7 @@ const solutions = [
     title: "Medical IoT",
     description: "Real-time connection of medical devices for improved situational awareness.",
     icon: Wifi,
-    comingSoon: true,
+    comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.iot
   },
@@ -128,7 +128,7 @@ const solutions = [
     title: "Protocol Designer",
     description: "AI SaaS platform to design and manage custom disaster and emergency protocols.",
     icon: FileText,
-    comingSoon: true,
+    comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.protocol
   }
