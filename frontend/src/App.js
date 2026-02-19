@@ -265,7 +265,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Integrated Digital Ecosystem for Smarter Hospital Operations
+              Digital Ecosystem for Smarter Hospital Operations
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
               Smarter Hospitals. Better Outcomes. Ahead of the Curve.
