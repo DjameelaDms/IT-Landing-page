@@ -582,15 +582,40 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Create email body with form data
+    const categoryLabels = {
+      sales: "Sales Inquiry",
+      demo: "Schedule a Demo",
+      implementation: "Implementation & Integration",
+      partnership: "Partnership",
+      research: "Research Collaboration",
+      careers: "Careers/Recruitment",
+      other: "Other"
+    };
+
+    const subject = `Contact Form: ${categoryLabels[formData.interest] || "General Inquiry"}`;
+    const body = `Name: ${formData.name}
+Email: ${formData.email}
+Organization: ${formData.organization || "Not provided"}
+Category: ${categoryLabels[formData.interest] || "Not selected"}
+
+Message:
+${formData.message}`;
+
+    // Open email client with pre-filled data
+    const mailtoLink = `mailto:informatics@aretion.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+
+    // Also save to database
     try {
       await axios.post(`${API}/contact`, formData);
-      toast.success("Message sent successfully! We'll get back to you soon.");
-      setFormData({ name: "", email: "", organization: "", interest: "", message: "" });
     } catch (error) {
-      toast.error("Failed to send message. Please try again or email us directly.");
-    } finally {
-      setIsSubmitting(false);
+      console.log("Database save failed, but email client opened");
     }
+
+    toast.success("Opening your email client...");
+    setFormData({ name: "", email: "", organization: "", interest: "", message: "" });
+    setIsSubmitting(false);
   };
 
   return (
