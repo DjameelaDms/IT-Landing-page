@@ -611,7 +611,7 @@ ${formData.message}`;
     }
 
     // Open email client with pre-filled data
-    const mailtoLink = `mailto:informatics@aretion.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:post@aretion.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
 
     // Show thank you modal
