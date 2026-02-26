@@ -577,6 +577,7 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -602,18 +603,19 @@ Category: ${categoryLabels[formData.interest] || "Not selected"}
 Message:
 ${formData.message}`;
 
+    // Save to database
+    try {
+      await axios.post(`${API}/contact`, formData);
+    } catch (error) {
+      console.log("Database save failed");
+    }
+
     // Open email client with pre-filled data
     const mailtoLink = `mailto:informatics@aretion.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
 
-    // Also save to database
-    try {
-      await axios.post(`${API}/contact`, formData);
-    } catch (error) {
-      console.log("Database save failed, but email client opened");
-    }
-
-    toast.success("Opening your email client...");
+    // Show thank you modal
+    setShowThankYou(true);
     setFormData({ name: "", email: "", organization: "", interest: "", message: "" });
     setIsSubmitting(false);
   };
