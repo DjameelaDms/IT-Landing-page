@@ -773,6 +773,37 @@ ${formData.message}`;
           </motion.div>
         </div>
       </div>
+
+      {/* Thank You Modal */}
+      <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
+        <DialogContent className="max-w-md bg-[#F5F0E8] text-center">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 rounded-full bg-[#1E3A5F] flex items-center justify-center">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
+            </div>
+            <DialogTitle className="font-heading text-2xl text-[#1E3A5F]">
+              Thank You for Contacting Us!
+            </DialogTitle>
+          </DialogHeader>
+          <div className="py-4">
+            <p className="text-[#3D1C1C]/80 mb-4">
+              Your message has been received. Our team will review your inquiry and get back to you within 24-48 hours.
+            </p>
+            <p className="text-sm text-[#6B8CAE]">
+              If your email client opened, please send the pre-filled email to complete your submission.
+            </p>
+          </div>
+          <button 
+            onClick={() => setShowThankYou(false)}
+            className="btn-primary w-full"
+            data-testid="thank-you-close-btn"
+          >
+            Close
+          </button>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
