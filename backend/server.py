@@ -103,7 +103,7 @@ async def get_status_checks():
 @api_router.post("/contact", response_model=ContactSubmissionResponse)
 async def submit_contact_form(input: ContactSubmissionCreate):
     """
-    Submit a contact form inquiry
+    Submit a contact form inquiry and send email notification
     """
     try:
         contact_dict = input.model_dump()
@@ -112,7 +112,76 @@ async def submit_contact_form(input: ContactSubmissionCreate):
         doc = contact_obj.model_dump()
         doc['created_at'] = doc['created_at'].isoformat()
         
+        # Save to database
         await db.contact_submissions.insert_one(doc)
+        
+        # Category labels
+        category_labels = {
+            "sales": "Sales Inquiry",
+            "demo": "Schedule a Demo",
+            "implementation": "Implementation & Integration",
+            "partnership": "Partnership",
+            "research": "Research Collaboration",
+            "careers": "Careers/Recruitment",
+            "other": "Other"
+        }
+        
+        category_name = category_labels.get(contact_obj.interest, "General Inquiry")
+        
+        # Create HTML email content
+        html_content = f"""
+        <html>
+        <body style="font-family: Georgia, serif; color: #3D1C1C; max-width: 600px; margin: 0 auto;">
+            <div style="background-color: #1E3A5F; padding: 20px; text-align: center;">
+                <h1 style="color: white; margin: 0;">ARETION Informatics Solutions</h1>
+                <p style="color: #C4A77D; margin: 5px 0 0 0;">New Contact Form Submission</p>
+            </div>
+            <div style="padding: 30px; background-color: #F5F0E8;">
+                <h2 style="color: #1E3A5F; margin-top: 0;">Contact Details</h2>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D; font-weight: bold; width: 150px;">Name:</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D;">{contact_obj.name}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D; font-weight: bold;">Email:</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D;"><a href="mailto:{contact_obj.email}" style="color: #1E3A5F;">{contact_obj.email}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D; font-weight: bold;">Organization:</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D;">{contact_obj.organization or 'Not provided'}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D; font-weight: bold;">Category:</td>
+                        <td style="padding: 10px 0; border-bottom: 1px solid #C4A77D;">{category_name}</td>
+                    </tr>
+                </table>
+                <h3 style="color: #1E3A5F; margin-top: 25px;">Message:</h3>
+                <div style="background-color: white; padding: 15px; border-left: 4px solid #8B4513; margin-top: 10px;">
+                    <p style="margin: 0; white-space: pre-wrap;">{contact_obj.message}</p>
+                </div>
+            </div>
+            <div style="background-color: #3D1C1C; padding: 15px; text-align: center;">
+                <p style="color: #C4A77D; margin: 0; font-size: 12px;">© 2026 ARETION & Company. All rights reserved.</p>
+            </div>
+        </body>
+        </html>
+        """
+        
+        # Send email via Resend
+        try:
+            params = {
+                "from": SENDER_EMAIL,
+                "to": [RECIPIENT_EMAIL],
+                "subject": f"Contact Form: {category_name} - {contact_obj.name}",
+                "html": html_content,
+                "reply_to": contact_obj.email
+            }
+            email_result = await asyncio.to_thread(resend.Emails.send, params)
+            logging.info(f"Email sent successfully: {email_result}")
+        except Exception as email_error:
+            logging.error(f"Failed to send email: {email_error}")
+            # Continue even if email fails - form data is saved to database
         
         return ContactSubmissionResponse(
             id=contact_obj.id,
