@@ -767,10 +767,7 @@ const ContactSection = () => {
           </DialogHeader>
           <div className="py-4">
             <p className="text-[#3D1C1C]/80 mb-4">
-              Your message has been received. Our team will review your inquiry and get back to you within 24-48 hours.
-            </p>
-            <p className="text-sm text-[#6B8CAE]">
-              If your email client opened, please send the pre-filled email to complete your submission.
+              Your message has been sent successfully. Our team will review your inquiry and get back to you within 24-48 hours.
             </p>
           </div>
           <button 
